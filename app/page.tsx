@@ -43,6 +43,9 @@ export default function Home() {
 
             <div className="space-y-1">
               <p className="">
+                <span className="opacity-60 ">birth date:</span>  03.08.2009
+              </p>
+              <p className="">
                 <span className="opacity-60 ">phone:</span> +48 796 150 224
               </p>
               <p>
@@ -55,9 +58,9 @@ export default function Home() {
               <p>
                 <span className="opacity-60">github:</span>{" "}
                 <a
-                  href="https://github.com/RafikoZZ55"
-                  target="_blank"
-                  className="hover:underline"
+                    href="https://github.com/RafikoZZ55"
+                    target="_blank"
+                    className="hover:underline"
                 >
                   RafikZZ555
                 </a>
