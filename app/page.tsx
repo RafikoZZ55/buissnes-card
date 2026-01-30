@@ -66,7 +66,7 @@ export default function Home() {
                     target="_blank"
                     className="hover:underline"
                 >
-                  RafikZZ555
+                  RafikoZZ555
                 </a>
               </p>
             </div>
