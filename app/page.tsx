@@ -43,7 +43,7 @@ export default function Home() {
 
             <div className="space-y-1">
               <p className="">
-                <span className="opacity-60 ">birth date:</span>  03.08.2009
+                <span className="opacity-60 ">birth date:</span> 03.08.2009
               </p>
               <p className="">
                 <span className="opacity-60 ">phone:</span> +48 796 150 224
