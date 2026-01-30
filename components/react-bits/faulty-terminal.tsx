@@ -1,5 +1,7 @@
+"use client";
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 import React, { useEffect, useRef, useMemo, useCallback } from 'react';
+
 type Vec2 = [number, number];
 
 export interface FaultyTerminalProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -159,14 +161,14 @@ float digit(vec2 p){
 
 float onOff(float a, float b, float c)
 {
-	return step(c, sin(iTime + a * cos(iTime * b))) * uFlickerAmount;
+  return step(c, sin(iTime + a * cos(iTime * b))) * uFlickerAmount;
 }
 
 float displace(vec2 look)
 {
     float y = look.y - mod(iTime * 0.25, 1.0);
     float window = 1.0 / (1.0 + 50.0 * y * y);
-	  return sin(look.y * 20.0 + iTime) * 0.0125 * onOff(4.0, 2.0, 0.8) * (1.0 + cos(iTime * 60.0)) * window;
+    return sin(look.y * 20.0 + iTime) * 0.0125 * onOff(4.0, 2.0, 0.8) * (1.0 + cos(iTime * 60.0)) * window;
 }
 
 vec3 getColor(vec2 p){
@@ -417,5 +419,7 @@ export default function FaultyTerminal({
     handleMouseMove
   ]);
 
-  return <div ref={containerRef} className={`faulty-terminal-container ${className}`} style={style} {...rest} />;
+  return (
+    <div ref={containerRef} className={`w-full h-full relative overflow-hidden ${className}`} style={style} {...rest} />
+  );
 }
