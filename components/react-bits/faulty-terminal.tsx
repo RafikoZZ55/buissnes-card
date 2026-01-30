@@ -258,7 +258,7 @@ export default function FaultyTerminal({
   tint = '#ffffff',
   mouseReact = true,
   mouseStrength = 0.2,
-  dpr = Math.min(window.devicePixelRatio || 1, 2),
+  dpr = 1,
   pageLoadAnimation = true,
   brightness = 1,
   className,
@@ -273,6 +273,7 @@ export default function FaultyTerminal({
   const frozenTimeRef = useRef(0);
   const rafRef = useRef<number>(0);
   const loadAnimationStartRef = useRef<number>(0);
+  // eslint-disable-next-line react-hooks/purity
   const timeOffsetRef = useRef<number>(Math.random() * 100);
 
   const tintVec = useMemo(() => hexToRgb(tint), [tint]);
