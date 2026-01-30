@@ -1,5 +1,5 @@
 "use client";
-import FaultyTerminal from "@/components/react-bits/fauilty-terminal";
+import FaultyTerminal from "@/components/react-bits/faulty-terminal";
 
 const techStack = [
   "TypeScript",
