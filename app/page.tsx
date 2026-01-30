@@ -1,6 +1,10 @@
 "use client";
-import FaultyTerminal from "@/components/react-bits/faulty-terminal";
+import dynamic from "next/dynamic";
 
+const FaultyTerminal = dynamic(
+    () => import("@/components/react-bits/faulty-terminal"),
+    { ssr: false } // important!
+);
 const techStack = [
   "TypeScript",
   "Next.js",
