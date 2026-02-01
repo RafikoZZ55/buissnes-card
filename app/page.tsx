@@ -1,15 +1,17 @@
 "use client";
+import TextType from "@/components/react-bits/text-type";
 import dynamic from "next/dynamic";
 
 const FaultyTerminal = dynamic(
-    () => import("@/components/react-bits/faulty-terminal"),
-    { ssr: false } // important!
+  () => import("@/components/react-bits/faulty-terminal"),
+  { ssr: false }
 );
+
 const techStack = [
   "TypeScript",
   "Next.js",
   "React",
-  "TailwingCSS",
+  "TailwindCSS",
   "Supabase",
   "Prisma",
   "Flutter",
@@ -19,7 +21,9 @@ const techStack = [
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen flex justify-center items-center md:py-12 md:px-36 sm:py-6 sm:px-18  p-3  bg-linear-to-br from-[#EEF1DB] via-[#b4b8a2] to-[#a7a595] shadow-[inset_1px_1px_5px_rgba(0,0,0,0.7)]">
+    <main className="w-screen h-screen flex flex-row justify-between items-center md:py-12  sm:py-6 sm:px-18  p-3 gap-10 bg-[#b4b8a2] shadow-[inset_1px_1px_5px_rgba(0,0,0,0.7)]">
+      <div className="h-full lg:block hidden w-48 bg-linear-to-bl from-[#979b88] to-[#b4b8a2] rounded-3xl shadow-[inset_1px_1px_6px_rgba(0,0,0,0.7)] p-8" />
+
       <div className="w-full h-full relative rounded-3xl shadow-[1px_1px_6px_rgba(0,0,0,0.7)] overflow-hidden">
         <FaultyTerminal
           scale={3}
@@ -42,7 +46,7 @@ export default function Home() {
         />
 
         <div className="absolute inset-0 flex justify-center items-center pointer-events-none px-4">
-          <div className="pointer-events-auto w-full sm:max-w-7xl bg-black/70 backdrop-blur-md  text-xl rounded-2xl p-6 shadow-xl text-[#A7EF9E] font-mono border border-[#A7EF9E]/30 space-y-6">
+          <div className="pointer-events-auto w-full sm:max-w-5xl bg-black/70 backdrop-blur-md  text-xl rounded-2xl p-6 shadow-xl text-[#A7EF9E] font-mono border border-[#A7EF9E]/30 space-y-6">
             <h1 className="text-5xl tracking-wider underline">Rafał Małycha</h1>
 
             <div className="space-y-1">
@@ -57,14 +61,11 @@ export default function Home() {
                 rafal.malycha101@gmail.com
               </p>
               <p>
-                <span className="opacity-60">discord:</span> Maserak#m6733
-              </p>
-              <p>
                 <span className="opacity-60">github:</span>{" "}
                 <a
-                    href="https://github.com/RafikoZZ55"
-                    target="_blank"
-                    className="hover:underline"
+                  href="https://github.com/RafikoZZ55"
+                  target="_blank"
+                  className="hover:underline"
                 >
                   RafikZZ555
                 </a>
@@ -87,16 +88,24 @@ export default function Home() {
 
             <div>
               <p className="opacity-60 mb-1 text-xl">README</p>
-              <p className="leading-relaxed opacity-80">
-                I develop modern web applications using the latest technologies.
-                Currently, I am working with Flutter to build cross-platform
-                apps. I have strong skills in object-oriented programming (OOP)
-                and creating well-structured, maintainable code.
-              </p>
+              <TextType
+                text={[
+                  "I develop modern web applications using the latest technologies. Currently, I am working with Flutter to build cross-platform apps. I have strong skills in object-oriented programming (OOP) and creating well-structured, maintainable code."
+                ]}
+                className="h-25"
+                typingSpeed={50}
+                pauseDuration={100000500}
+                showCursor
+                cursorCharacter="_"
+                deletingSpeed={0}
+                cursorBlinkDuration={0.5}
+              />
             </div>
           </div>
         </div>
       </div>
+
+      <div className="h-full lg:block hidden w-48 bg-linear-to-bl from-[#979b88] to-[#b4b8a2] rounded-3xl shadow-[inset_1px_1px_6px_rgba(0,0,0,0.7)] p-8" />
     </main>
   );
 }
